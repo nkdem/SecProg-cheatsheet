@@ -1,0 +1,66 @@
+\wde{Assembly Programs and Shell-Code Attacks}{
+    Assembly programs can be used to create shellcode which is injected into vulnerable applications through buffer overflows. 
+    Could spawn a shell (arbitrary code execution), reverse shell (remote code execution), or other malicious activities.
+}
+\wde{OS Command Injection/Environment Variables}{
+    It's important to be careful with programs that use environment variables to execute commands.
+    In particular \texttt{PATH} and \texttt{LD\_LIBRARY\_PATH} can be manipulated to execute arbitrary
+    code. 
+}
+
+\wde{Unix File Permission Codes}{
+    Unix file permissions are represented by a 10 character string. The first character is the file type, the next three are the owner's permissions, the next three are the group's permissions, and the last three are the world's permissions (everyone else). The permissions can be:
+    \begin{itemize}
+        \item \texttt{r} - read (4)
+        \item \texttt{w} - write (2)
+        \item \texttt{x} - execute (1)
+    \end{itemize}
+    Common file types are:
+    \begin{itemize}
+        \item \texttt{-} - regular file
+        \item \texttt{d} - directory
+        \item \texttt{l} - symbolic link
+    \end{itemize}
+}
+\wde{Permission Attacks}{
+    Exploring the file system and looking for files with weak permissions can be a good way to find vulnerabilities.
+}
+
+\wde{Stack Canary / StackGuard}{
+    A form of \textbf{Tamper Detection} that can be used to detect buffer overflows.
+    StackGuard canaries prevent buffer overflow attacks by inserting random values near the return pointer and checking their integrity before returning.
+    While effective against return pointer overwriting, they don't protect against modifying local variables or preventing Denial of Service attacks that intentionally trigger canary detection.
+    Also not effective against return-to-libc (ret2libc) or return-oriented programming (ROP) attacks.
+}
+\wde{Control-Flow Integrity (CFI)}{
+    A more powerful defense mechanism that ensures the code execution follows a pre-defined control graph.
+    This \textit{could} prevent return-to-libc and ROP attacks.
+}
+
+\wde{Seperation Mechanisms}{
+    \begin{itemize}
+        \item Hardware Memory Protection 
+        \begin{itemize}
+            \item Memory Fences: These seperate memory accesses between OS and user code, providing one-way protection 
+            \item Base and Bounds Registers: Enforce seperation between programs by controlling access to specific memory ranges, thus preventing unauthorized memory access
+            \item Tagged Architecture: Assign tags to memory locations that dictate access rights (read,write,execute), although not widely used in modern systems
+        \end{itemize}
+        \item Paging splits programs/data into pieces.
+        \begin{itemize}
+            \item Data Execution Prevention (DEP) / Write XOR Execute (W\^{}X): Prevents code from executing in data regions (making injected shellcode non-executable)
+        \end{itemize}
+        \item Process Isolation (EXTRA)
+        \begin{itemize}
+            \item Virtual Memory: Each process operates in its own virtual address space, preventing unauthorized access to other processes
+            \item Containerisation: Isolates processes in containers, preventing unauthorized access to other processes. Reduces the attack surface area 
+            and worst-case it will only compromise the container
+        \end{itemize}
+    \end{itemize}
+}
+
+
+\wde{Diversification}{
+    Make many versions of same program; thwarting attacks that rely on knowing the exact layout of the program in memory.
+    \textbf{Address Space Layout Randomization (ASLR)} is a common technique that randomizes the memory layout of a program.
+    Could still be suspectible to a brute-force attack of guessing the memory layout.
+}
