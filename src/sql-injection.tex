@@ -1,4 +1,52 @@
-\subsubsection*{SQL Injection}
+\wde{Injection}{
+    Succinctly defined as part of CWE-74: Improper Neutralization of Special Elements in Output Used by a Downstream Component, i.e. 
+    \begin{quote}
+    ALWAYS CHECK YOUR INPUTS
+    \end{quote}
+}
+
+\wde{Metadata}{
+    Metadata accompanies the main data and represents additional information about it, such as how to display textual strings or where a string ends. In the context of SQL injection, metadata can influence how queries are constructed and processed.
+}
+
+\wde{In-band Representation}{
+    In-band representation embeds metadata into the data stream itself, such as using special characters within SQL queries. This can lead to injection vulnerabilities if user input is not properly sanitized.
+}
+
+\wde{Out-of-band Representation}{
+    Out-of-band representation separates metadata from data, making it less susceptible to injection attacks. For example, using prepared statements allows the SQL engine to distinguish between data and commands.
+}
+
+\wde{Input Validation}{
+    Input validation can be achieved through blacklisting and whitelisting:
+    \begin{itemize}
+        \item \textbf{Blacklisting}: Keeping a list of forbidden characters or patterns and rejecting inputs that contain them.
+        \item \textbf{Whitelisting}: Keeping a list of allowed characters or patterns and rejecting inputs that do not match.
+    \end{itemize}
+}
+
 \wde{SQL Injection}{
-    SQL injection is a code injection technique that exploits vulnerabilities in an application's software by inserting malicious SQL statements into input fields.
+    SQL Injection (CWE-89) is a command injection (CWE-77) that allows attackers to execute arbitrary SQL queries through user input. This can lead to unauthorized access to the database, data leakage, and data corruption.
+}
+
+\wde{Common SQL Injection Techniques}{
+    SQL injection techniques can be classified into several categories:
+    \begin{itemize}
+        \item **Tautologies**: Injecting code that always evaluates to true.
+        \item **Illegal/Incorrect Queries**: Causing run-time errors to learn information from error messages.
+        \item **Union Queries**: Combining results from multiple queries to extract additional data.
+        \item **Piggy-Backed Queries**: Executing multiple queries in a single request.
+        \item **Inference Pairs**: Using differences in responses to infer information.
+        \item **Stored Procedures**: Exploiting vulnerabilities in stored procedures to execute arbitrary SQL commands.
+    \end{itemize}
+}
+
+\wde{Prevention and Detection}{
+    To prevent SQL injection vulnerabilities, developers can:
+    \begin{itemize}
+        \item Use prepared statements and parameterized queries.
+        \item Implement rigorous input validation and sanitization.
+        \item Employ web application firewalls (WAFs) to filter malicious requests.
+        \item Regularly test and audit code for vulnerabilities.
+    \end{itemize}
 }
