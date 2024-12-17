@@ -1,0 +1,53 @@
+\wde{OWASP - Open Web Application Security Project}{
+    The Open Web Application Security Project (OWASP) is a non-profit organization dedicated to improving web application security.
+}
+\wde{HTTP and Attacks}{
+    HTTP (Hypertext Transfer Protocol) is the foundational protocol for data communication on the web. It is stateless, meaning each request from a client to server is treated as an independent transaction. This statelessness can lead to vulnerabilities if not managed properly.
+    
+    Common attacks on HTTP include:
+    \begin{itemize}
+        \item **Session Stealing**: Attackers can hijack a user's session by obtaining their session ID, often through Cross-Site Scripting (XSS) or Cross-Site Request Forgery (CSRF).
+        \item **Authentication Errors**: Flaws in authentication mechanisms can allow unauthorized users to gain access to sensitive information or functionalities.
+        \item **URL Format Attacks**: Manipulating URLs to exploit vulnerabilities in how web applications process parameters.
+    \end{itemize}
+}
+
+\wde{Session Stealing}{
+    Session stealing occurs when an attacker obtains a user's session ID, allowing them to impersonate the user. This can happen through various means, such as:
+    \begin{itemize}
+        \item **Cross-Site Scripting (XSS)**: Injecting malicious scripts into web pages to steal session cookies.
+        \item **Cross-Site Request Forgery (CSRF)**: Forcing users to perform actions without their consent.
+    \end{itemize}
+}
+
+\wde{URL Format Attacks}{
+    URL format attacks exploit flaws in how web applications process URLs. Common vulnerabilities include:
+    \begin{itemize}
+        \item **Open Redirects**: Allowing attackers to redirect users to malicious sites.
+    \end{itemize}
+}
+
+\wde{Object References}{
+Exploitting XML External Entities (XXE) vulnerabilities allows attackers to read local files, perform remote requests, and execute arbitrary code. 
+To prevent XXE attacks, use more restrictive and specific formats for exchanging data, take care with deserialization, configure DTD and XML processors to validate documents, enable security checks, and prevent external entity processing.
+}
+
+\wde{Cross-Site Scripting (XSS)}{
+    Cross-Site Scripting (XSS) attacks allow attackers to inject malicious scripts into web pages viewed by other users. There are two main types:
+    \begin{itemize}
+        \item **Stored XSS**: The malicious script is stored on the server and delivered to users when they access the affected page.
+        \item **Reflected XSS**: The script is reflected off a web server, typically via a URL or form submission.
+    \end{itemize}
+    
+    To mitigate XSS attacks, developers should implement output encoding, input validation, and Content Security Policies (CSP).
+}
+
+\wde{Cross-Site Request Forgery (CSRF)}{
+    Cross-Site Request Forgery (CSRF) is an attack that tricks a user into executing unwanted actions on a different site where they are authenticated. This can lead to unauthorized transactions or actions. To prevent CSRF attacks:
+    \begin{itemize}
+        \item Use anti-CSRF tokens in forms.
+        \item Implement SameSite cookie attributes.
+        \item Validate the Referer header to ensure requests come from trusted sources.
+        \item A ``double submit cookie'' approach can also be used where a cookie value is sent in both a cookie and a request parameter and if they don't match, the request is rejected.
+    \end{itemize}
+}
