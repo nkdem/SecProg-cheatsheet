@@ -11,38 +11,38 @@
 \we{Heartbleed}{
     Heartbleed is a serious vulnerability in the OpenSSL cryptographic software library, discovered in 2014. 
     \begin{itemize}
-        \item **Failure of Protocol Design**: The flaw allowed attackers to exploit the heartbeat extension of the TLS/DTLS protocols.
-        \item **Session Prolongation**: Attackers could prolong sessions without detection, leading to potential data leakage.
-        \item **Untrusted Clients**: Clients are inherently untrusted, and the vulnerability allowed them to read sensitive memory from the server.
-        \item **Data Leakage Attack**: This resulted in the exposure of private keys, usernames, passwords, and other sensitive data.
+        \item \textbf{Failure of Protocol Design}: The flaw allowed attackers to exploit the heartbeat extension of the TLS/DTLS protocols.
+        \item \textbf{Session Prolongation}: Attackers could prolong sessions without detection, leading to potential data leakage.
+        \item \textbf{Untrusted Clients}: Clients are inherently untrusted, and the vulnerability allowed them to read sensitive memory from the server.
+        \item \textbf{Data Leakage Attack}: This resulted in the exposure of private keys, usernames, passwords, and other sensitive data.
     \end{itemize}
 }
 
 \we{Shellshock}{
     Shellshock is a vulnerability in the Unix Bash shell that was discovered in 2014, allowing attackers to execute arbitrary commands via environment variables.
     \begin{itemize}
-        \item **Bash Attack**: The vulnerability exploited the way Bash handles function definitions, enabling command injection.
-        \item **Common in Embedded Systems**: Shellshock is particularly dangerous because shell interpreters are widely used in embedded systems and IoT devices.
-        \item **Influence of Environment Variables**: Attackers could manipulate environment variables to execute commands on vulnerable systems.
-        \item **Arbitrary Command Execution**: This led to widespread exploitation, allowing attackers to gain unauthorized access and control over affected systems.
+        \item \textbf{Bash Attack}: The vulnerability exploited the way Bash handles function definitions, enabling command injection.
+        \item \textbf{Common in Embedded Systems}: Shellshock is particularly dangerous because shell interpreters are widely used in embedded systems and IoT devices.
+        \item \textbf{Influence of Environment Variables}: Attackers could manipulate environment variables to execute commands on vulnerable systems.
+        \item \textbf{Arbitrary Command Execution}: This led to widespread exploitation, allowing attackers to gain unauthorized access and control over affected systems.
     \end{itemize}
 }
 
 \we{Spectre and Meltdown}{
     Spectre and Meltdown are vulnerabilities discovered in modern CPUs, affecting nearly all processors manufactured since the late 1990s.
     \begin{itemize}
-        \item **Rediscovered Vulnerabilities**: These vulnerabilities exploit speculative execution, a performance optimization technique used in CPUs.
-        \item **CPU Speculation**: Attackers could trick the CPU into executing instructions that should not have been run, allowing them to access sensitive data.
-        \item **Impact on Web Browsers**: Web browsers with Just-In-Time (JIT) compilation were particularly affected, as they could inadvertently expose data from other processes.
-        \item **Isolation Circumvention**: Isolation is a primary defense mechanism that was circumvented, leading to potential data breaches across different applications running on the same hardware.
+        \item \textbf{Rediscovered Vulnerabilities}: These vulnerabilities exploit speculative execution, a performance optimization technique used in CPUs.
+        \item \textbf{CPU Speculation}: Attackers could trick the CPU into executing instructions that should not have been run, allowing them to access sensitive data.
+        \item \textbf{Impact on Web Browsers}: Web browsers with Just-In-Time (JIT) compilation were particularly affected, as they could inadvertently expose data from other processes.
+        \item \textbf{Isolation Circumvention}: Isolation is a primary defense mechanism that was circumvented, leading to potential data breaches across different applications running on the same hardware.
     \end{itemize}
 }
 
 \we{Mirai}{
     Mirai is a malware strain that targets Internet of Things (IoT) devices, discovered in 2016, and is known for launching large-scale DDoS attacks.
     \begin{itemize}
-        \item **IoT Device Vulnerabilities**: The malware exploits weak security credentials (default usernames and passwords) in IoT devices.
-        \item **DDoS Botnet Army**: Mirai created a botnet army by infecting thousands of IoT devices, which were then used to launch Distributed Denial of Service (DDoS) attacks.
-        \item **Cyberattack on Dyn**: The most notable attack was on Dyn, a DNS provider, which disrupted major websites and services, showcasing the vulnerabilities of IoT devices and the potential for large-scale cyberattacks.
+        \item \textbf{IoT Device Vulnerabilities}: The malware exploits weak security credentials (default usernames and passwords) in IoT devices.
+        \item \textbf{DDoS Botnet Army}: Mirai created a botnet army by infecting thousands of IoT devices, which were then used to launch Distributed Denial of Service (DDoS) attacks.
+        \item \textbf{Cyberattack on Dyn}: The most notable attack was on Dyn, a DNS provider, which disrupted major websites and services, showcasing the vulnerabilities of IoT devices and the potential for large-scale cyberattacks.
     \end{itemize}
 }

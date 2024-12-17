@@ -1,28 +1,26 @@
-\subsection*{Advanced Secure Programming}
-
 \wde{Information Leakage}{
     Information leakage occurs when sensitive data is unintentionally exposed to unauthorized parties. This can happen through various channels, including:
     \begin{itemize}
-        \item **Web Applications**: Poorly configured applications may expose data through error messages or logs.
-        \item **APIs**: APIs that return excessive data or lack proper access controls can leak sensitive information.
-        \item **Session Management**: Insecure session management can allow attackers to steal session IDs and access confidential data.
+        \item \textbf{Web Applications}: Poorly configured applications may expose data through error messages or logs.
+        \item \textbf{APIs}: APIs that return excessive data or lack proper access controls can leak sensitive information.
+        \item \textbf{Session Management}: Insecure session management can allow attackers to steal session IDs and access confidential data.
     \end{itemize}
 }
 
 \wde{Race Conditions}{
     Race conditions arise in concurrent systems when multiple processes or threads access shared resources without proper synchronization. This can lead to unexpected behavior, data corruption, or security vulnerabilities:
     \begin{itemize}
-        \item **Time-of-Check to Time-of-Use (TOCTOU)**: A specific race condition where the state of a resource changes between the check and the use, potentially allowing unauthorized access.
-        \item **Data Races**: Occur when two or more threads access shared data simultaneously, and at least one of the accesses is a write.
+        \item \textbf{Time-of-Check to Time-of-Use (TOCTOU)}: A specific race condition where the state of a resource changes between the check and the use, potentially allowing unauthorized access.
+        \item \textbf{Data Races}: Occur when two or more threads access shared data simultaneously, and at least one of the accesses is a write.
     \end{itemize}
 }
 
 \wde{Taint Access Control}{
     Taint access control is a security mechanism that tracks the flow of potentially harmful data through a program. The key concepts include:
     \begin{itemize}
-        \item **Tainted Data**: Data that originates from untrusted sources, such as user input.
-        \item **Untainted Data**: Data that is considered safe to use and has been verified.
-        \item **Propagation of Labels**: As data flows through the program, labels indicating whether data is tainted or untainted are propagated, allowing for checks before sensitive operations.
+        \item \textbf{Tainted Data}: Data that originates from untrusted sources, such as user input.
+        \item \textbf{Untainted Data}: Data that is considered safe to use and has been verified.
+        \item \textbf{Propagation of Labels}: As data flows through the program, labels indicating whether data is tainted or untainted are propagated, allowing for checks before sensitive operations.
     \end{itemize}
     This approach helps prevent vulnerabilities related to information leakage and ensures that sensitive operations are only performed on trusted data.
 }
@@ -30,23 +28,20 @@
 \wde{Program Analysis Tools for Security}{
     Program analysis tools help identify vulnerabilities in code by analyzing source code or binaries. They can be categorized into two main types:
     \begin{itemize}
-        \item **Static Analysis Tools**: Analyze code without executing it, looking for potential vulnerabilities, coding standards violations, and logic errors. Examples Here’s the continuation of the content for the **Advanced Secure Programming** section in your `secure-development.tex` file:
-
-```latex
-        \item **Static Analysis Tools**: Analyze code without executing it, looking for potential vulnerabilities, coding standards violations, and logic errors. Examples include FindBugs, PMD, and Coverity.
-        \item **Dynamic Analysis Tools**: Analyze code during execution, monitoring runtime behavior to detect issues such as memory leaks, race conditions, and security vulnerabilities. Examples include Valgrind and AddressSanitizer.
+        \item \textbf{Static Analysis Tools}: Analyze code without executing it, looking for potential vulnerabilities, coding standards violations, and logic errors. Examples include FindBugs, PMD, and Coverity.
+        \item \textbf{Dynamic Analysis Tools}: Analyze code during execution, monitoring runtime behavior to detect issues such as memory leaks, race conditions, and security vulnerabilities. Examples include Valgrind and AddressSanitizer.
     \end{itemize}
 }
 
 \wde{Static versus Dynamic Analysis}{
     Both static and dynamic analysis have their strengths and weaknesses:
     \begin{itemize}
-        \item **Static Analysis**:
+        \item \textbf{Static Analysis}:
             \begin{itemize}
                 \item Advantages: Can analyze all code paths, runs before code execution, and can catch issues early in the development cycle.
                 \item Disadvantages: May produce false positives and miss defects due to limitations in understanding the code's runtime context.
             \end{itemize}
-        \item **Dynamic Analysis**:
+        \item \textbf{Dynamic Analysis}:
             \begin{itemize}
                 \item Advantages: Tests code in a real execution environment, can catch runtime-specific issues.
                 \item Disadvantages: May not cover all code paths and can be slower due to the overhead of execution.
@@ -57,17 +52,17 @@
 \wde{Issues in Static Analysis}{
     Static analysis tools face several challenges:
     \begin{itemize}
-        \item **False Positives**: Tools may flag benign code as vulnerable, leading to unnecessary effort in investigating non-issues.
-        \item **Missing Defects**: Tools may fail to identify genuine vulnerabilities due to limitations in their analysis capabilities or configuration.
-        \item **Complexity**: Analyzing large codebases can lead to state-space explosion, making it difficult to manage and interpret results.
+        \item \textbf{False Positives}: Tools may flag benign code as vulnerable, leading to unnecessary effort in investigating non-issues.
+        \item \textbf{Missing Defects}: Tools may fail to identify genuine vulnerabilities due to limitations in their analysis capabilities or configuration.
+        \item \textbf{Complexity}: Analyzing large codebases can lead to state-space explosion, making it difficult to manage and interpret results.
     \end{itemize}
 }
 
 \wde{Language-Based Security}{
     Language-based security involves using programming languages that enforce security properties through their type systems and runtime checks:
     \begin{itemize}
-        \item **Custom Type Checking**: Languages like Rust and TypeScript provide strong type systems that help prevent common vulnerabilities such as buffer overflows and injection attacks.
-        \item **Taint Tracking**: Dynamic taint analysis tracks the flow of potentially harmful data through a program, helping to prevent vulnerabilities related to information leakage.
-        \item **Static Analysis**: Tools that leverage language features to enforce security policies at compile time, reducing the likelihood of runtime vulnerabilities.
+        \item \textbf{Custom Type Checking}: Languages like Rust and TypeScript provide strong type systems that help prevent common vulnerabilities such as buffer overflows and injection attacks.
+        \item \textbf{Taint Tracking}: Dynamic taint analysis tracks the flow of potentially harmful data through a program, helping to prevent vulnerabilities related to information leakage.
+        \item \textbf{Static Analysis}: Tools that leverage language features to enforce security policies at compile time, reducing the likelihood of runtime vulnerabilities.
     \end{itemize}
 }
