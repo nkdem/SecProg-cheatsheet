@@ -4,23 +4,24 @@
         \item \textbf{Confidentiality}: Data is only available to the people intended to access it.
         \item \textbf{Integrity}: Data and system resources are only changed in appropriate ways by appropriate people.
         \item \textbf{Availability}: Systems are ready when needed and perform acceptably.
-        \item \textbf{Authentication}: The identity of users is established (or you’re willing to accept anonymous users).
+        \item \textbf{Authentication}: The identity of users is established (or you're willing to accept anonymous users).
         \item \textbf{Authorization}: Users are explicitly allowed or denied access to resources.
-        \item \textbf{Nonrepudiation}: Users can’t perform an action and later deny performing it.
+        \item \textbf{Nonrepudiation}: Users can't perform an action and later deny performing it.
     \end{enumerate}
 }
 
 \wde{STRIDE}{
-    STRIDE is a mnemonic for categories of security threats:
+    STRIDE is a mnemonic for categories of security threats, along with the corresponding security properties that each threat type attacks:
     \begin{itemize}
-        \item \textbf{Spoofing}: Attacker pretends to be someone else.
-        \item \textbf{Tampering}: Attacker alters data or settings.
-        \item \textbf{Repudiation}: User can deny making an attack.
-        \item \textbf{Information Disclosure}: Loss of personal information.
-        \item \textbf{Denial of Service}: Preventing proper site operation.
-        \item \textbf{Elevation of Privilege}: User gains higher privileges.
+        \item \textbf{Spoofing}: Attacker pretends to be someone else. \textit{(Attacks Authentication)}
+        \item \textbf{Tampering}: Attacker alters data or settings. \textit{(Attacks Integrity)}
+        \item \textbf{Repudiation}: User can deny making an attack. \textit{(Attacks Non-repudiation)}
+        \item \textbf{Information Disclosure}: Loss of personal information. \textit{(Attacks Confidentiality)}
+        \item \textbf{Denial of Service}: Preventing proper site operation. \textit{(Attacks Availability)}
+        \item \textbf{Elevation of Privilege}: User gains higher privileges. \textit{(Attacks Authorization)}
     \end{itemize}
 }
+
 
 \wde{Saltzer's Classic Principles}{
     Saltzer and Schroeder's principles provide guidelines for secure design:
