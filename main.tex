@@ -1,0 +1,47 @@
+\documentclass[9pt]{extarticle}
+
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{stmaryrd}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usetikzlibrary{bayesnet}
+\setlist{nosep}
+\titleformat{\subsection}[runin]{\normalfont\Large\bfseries}{\thesubsection.}{6pt}{}[]
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+
+
+
+% Disable warnings
+% chktex-file 1
+
+\input{style.sty}
+\input{defs.tex}
+
+% \fontsize{2}
+
+\begin{document}
+  \begin{multicols}{2}
+  \subsection*{Secure Development}
+  \input{src/secure-development.tex}
+
+  % \subsection*{Calculus}
+  % \input{src/calculus.tex}
+  %
+  % \end{multicols}
+  % % \begin{multicols}{2}
+  %   \subsection*{Examples}
+  % \input{src/examples/l1}
+  % \input{src/examples/l2}
+  \end{multicols}
+\newpage
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=0.5\linewidth]{images/McGraws-Secure-Software-Development-Life-Cycle-Process.png}
+    \caption{McGraw's Secure Software Development Lifecycle (SSDLC) emphasizes integrating security at various stages of software development.}
+    \end{center}
+\end{figure}
+\end{document}

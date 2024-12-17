@@ -1,0 +1,104 @@
+\wde{Security Properties}{
+    Key security properties that must be considered in secure programming include:
+    \begin{enumerate}
+        \item \textbf{Confidentiality}: Data is only available to the people intended to access it.
+        \item \textbf{Integrity}: Data and system resources are only changed in appropriate ways by appropriate people.
+        \item \textbf{Availability}: Systems are ready when needed and perform acceptably.
+        \item \textbf{Authentication}: The identity of users is established (or you’re willing to accept anonymous users).
+        \item \textbf{Authorization}: Users are explicitly allowed or denied access to resources.
+        \item \textbf{Nonrepudiation}: Users can’t perform an action and later deny performing it.
+    \end{enumerate}
+}
+
+\wde{STRIDE}{
+    STRIDE is a mnemonic for categories of security threats:
+    \begin{itemize}
+        \item \textbf{Spoofing}: Attacker pretends to be someone else.
+        \item \textbf{Tampering}: Attacker alters data or settings.
+        \item \textbf{Repudiation}: User can deny making an attack.
+        \item \textbf{Information Disclosure}: Loss of personal information.
+        \item \textbf{Denial of Service}: Preventing proper site operation.
+        \item \textbf{Elevation of Privilege}: User gains higher privileges.
+    \end{itemize}
+}
+
+\wde{Saltzer's Classic Principles}{
+    Saltzer and Schroeder's principles provide guidelines for secure design:
+    \begin{enumerate}
+        \item \textbf{Economy of Mechanism}: Keep the design simple.
+        \item \textbf{Fail-Safe Defaults}: Default to secure configurations; fail closed with no single point of failure.
+        \item \textbf{Complete Mediation}: Check permissions on every access; ensure that all access requests are verified.
+        \item \textbf{Open Design}: Assume that attackers have access to the source code and specifications; design should not rely on obscurity.
+        \item \textbf{Separation of Privilege}: Require multiple conditions to grant access to sensitive operations; don’t permit an operation based on a single condition.
+        \item \textbf{Least Privilege}: Grant only the minimum privileges necessary for users or processes; no more privileges than what is needed.
+        \item \textbf{Least Common Mechanism}: Minimize shared resources; be cautious of mechanisms that are shared among users.
+        \item \textbf{Psychological Acceptability}: Ensure that security measures are user-friendly and do not hinder usability; security should be intuitive for users.
+    \end{enumerate}
+}
+
+
+\wde{McGraw's Three Pillars}{
+    McGraw's approach is built on three pillars:
+    \begin{enumerate}
+        \item \textbf{Applied Risk Management}: Identify, rank, and track risks using threat modeling to uncover security risks.
+        \item \textbf{Software Security Touchpoints}: Integrate security-related activities throughout the software development lifecycle.
+        \item \textbf{Knowledge}: Leverage existing knowledge, programming guidelines, and known exploits to enhance security practices.
+    \end{enumerate}
+}
+
+\wde{McGraw's Seven Touchpoints}{
+    McGraw identified 7 touchpoints that could be integrated in the traditional software development lifecycle (SDLC)
+    \begin{enumerate}
+        \item \textbf{Abuse Cases}: Identify potential misuse scenarios.
+            \begin{itemize}
+                \item Artifacts: Use case documents, threat models.
+                \item Problems: Failure to consider all misuse scenarios can lead to unaddressed vulnerabilities.
+                \item Bad Example: Ignoring input validation in a web application leading to SQL injection.
+            \end{itemize}
+        \item \textbf{Security Requirements}: Define security needs early in the process.
+            \begin{itemize}
+                \item Artifacts: Security requirement specifications, risk assessment reports.
+                \item Problems: Vague or incomplete security requirements can result in inadequate protection.
+                \item Bad Example: A requirement stating "the application should be secure" without specifics on encryption or access controls.
+            \end{itemize}
+        \item \textbf{Architectural Risk Analysis}: Assess risks in design and architecture.
+            \begin{itemize}
+                \item Artifacts: Architecture diagrams, risk analysis documents, design specifications.
+                \item Problems: Failing to identify security flaws in the architecture can lead to critical vulnerabilities.
+                \item Bad Example: Designing a system without considering the security of third-party components.
+            \end{itemize}
+        \item \textbf{Risk-Based Security Testing}: Focus on testing based on risk analysis.
+            \begin{itemize}
+                \item Artifacts: Test plans, test cases, risk assessment matrices.
+                \item Problems: Inadequate testing of high-risk areas may leave critical vulnerabilities untested.
+                \item Bad Example: Conducting extensive tests on low-risk features while neglecting authentication mechanisms.
+            \end{itemize}
+        \item \textbf{Code Review}: Inspect code for security vulnerabilities.
+            \begin{itemize}
+                \item Artifacts: Source code, code review checklists, static analysis reports.
+                \item Problems: Insufficient or poorly structured code reviews can miss significant vulnerabilities.
+                \item Bad Example: Relying solely on automated tools without manual review, leading to overlooked security issues.
+            \end{itemize}
+        \item \textbf{Penetration Testing}: Test the system for vulnerabilities in a real-world context.
+            \begin{itemize}
+                \item Artifacts: Penetration testing reports, vulnerability assessment tools, exploitation scripts.
+                \item Problems: Conducting penetration tests without understanding the system can result in incomplete assessments.
+                \item Bad Example: External testers not familiar with the application’s architecture, leading to ineffective testing.
+            \end{itemize}
+        \item \textbf{Security Operations}: Manage security during the deployment phase.
+            \begin{itemize}
+                \item Artifacts: Security operation procedures, incident response plans, monitoring logs.
+                \item Problems: Lack of continuous monitoring can lead to undetected security incidents.
+                \item Bad Example: Deploying an application without proper logging and monitoring, making incident response difficult.
+            \end{itemize}
+    \end{enumerate}
+}
+
+\wt{Dijkstra's Observation on Testing}{
+    Dijkstra's famous remark states:
+    \begin{quote}
+        "Testing shows the presence, not the absence of bugs."
+    \end{quote}
+    This highlights the importance of comprehensive testing strategies and the understanding that passing tests do not guarantee that no bugs exist in the software.
+}
+
