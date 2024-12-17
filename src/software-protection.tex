@@ -1,0 +1,48 @@
+\wde{MATE and R-MATE Threat Models}{
+    The **Man-At-The-End (MATE)** and **Remote Man-At-The-End (R-MATE)** threat models describe scenarios where an attacker has physical or remote access to a device, allowing them to exploit vulnerabilities:
+    \begin{itemize}
+        \item **MATE Attacks**: An adversary with physical access can inspect, reverse engineer, or tamper with hardware or software. Common goals include:
+            \begin{itemize}
+                \item Software piracy
+                \item License check removal
+                \item Malicious reverse engineering
+                \item DRM key extraction
+                \item Protocol discovery
+                \item Violation of export/supply chain controls
+            \end{itemize}
+        \item **R-MATE Attacks**: In distributed systems, untrusted clients communicating with trusted servers can lead to exploitation, such as:
+            \begin{itemize}
+                \item Cheating in networked games
+                \item Accessing or altering distributed medical records
+                \item Attacking wireless sensor networks
+                \item Hacking smart meters to disrupt supply
+            \end{itemize}
+    \end{itemize}
+}
+
+\wde{Code Signing}{
+    Code signing is a security measure that provides a way to verify the integrity and authenticity of software. It involves:
+    \begin{itemize}
+        \item **Detecting Tampering**: Code signing ensures that any modifications to the software can be detected before execution.
+        \item **Authenticity Assurance**: It provides assurance that the software comes from a legitimate source.
+        \item **Drawbacks**: Despite its benefits, code signing can be compromised if the private keys used to sign the code are stolen or mismanaged.
+    \end{itemize}
+}
+
+\wde{Tamper-Proofing and Watermarking}{
+    Tamper-proofing aims to ensure that a program executes as intended, even when the user may try to disrupt or alter its operation. Key strategies include:
+    \begin{itemize}
+        \item **Tamper Detection**: Implementing checks to see if the software has been altered.
+        \item **Response Mechanisms**: Actions taken when tampering is detected, such as terminating the program or degrading its functionality.
+        \item **Watermarking**: Embedding information into the software that can help trace back to its source. This can be used for copyright protection or to track usage.
+    \end{itemize}
+}
+
+\wde{Program Obfuscation}{
+    Program obfuscation is a technique used to make code difficult to understand and reverse engineer. This involves:
+    \begin{itemize}
+        \item **Transforming Code**: Changing the representation of code while preserving its functionality, making it harder for attackers to analyze.
+        \item **Impossibility of Black-Box Obfuscation**: It is theoretically impossible to create a perfect obfuscation that prevents all forms of reverse engineering. However, effective obfuscation can significantly increase the effort required for analysis.
+        \item **Techniques**: Common techniques include renaming variables, altering control flow, and inserting dummy code to confuse potential attackers.
+    \end{itemize}
+}
