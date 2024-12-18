@@ -1,3 +1,20 @@
+\wde{Memory Safety}{
+    A programming language or analysis tool is said to enforce memory safety if it 
+    ensures that reads and writes stay within clearly defined memory areas,
+    belonging to different parts of the program.
+    Memory areas are often delineated with types and a typing discipline.
+}
+\wde{Type Safety}{
+    A programming language, analysis tool or runtime is said to enforce type safety if it 
+    has a clearly specified typing discipline for data values and it ensures that 
+    data values (representations) for types stay within the domain of those types during 
+    program execution.
+}
+
+\wt{Type Safety implies Memory Safety}{
+    Type safety implies memory safety (provided it does bounds checking).
+    Converse \textbf{not} true.
+}
 \wde{Buffer Overflow}{
     Buffer overflows arise when a region of memory exceeds its allocated size, resulting in the overwriting of adjacent memory that may be used elsewhere in the program. This can lead to unexpected behavior in the program's execution.
     A buffer overflow exploits the stack layout to typically overwrite the return address of a function to 

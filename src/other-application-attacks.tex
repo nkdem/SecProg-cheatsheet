@@ -1,14 +1,15 @@
 
-\we{
-    xz-utils
-}{
-    The xz-utils vulnerability exploited IFUNCs in the library, allowing runtime function implementation selection.
-    Attacker Jia Tan crafted a bash script using M4 macros that manipulated test files and modified the Makefile, creating a binary backdoor.
-    The backdoor's IFUNC resolver altered the Global Offset Table, redirecting the `RSA\_public\_decrypt()` function to malicious code.
-    When services like SSHD used the library, this enabled arbitrary code execution, demonstrating the risks of dynamic function resolution in shared libraries.
+\we{xz-utils - CWE-506 (Embedded Malicious Code)}{
+    xz-utils is a library that experienced a vulnerability due to the exploitation of IFUNCs, allowing attackers to manipulate function implementations at runtime.
+    \begin{itemize}
+        \item \textbf{IFUNC Exploitation}: The vulnerability was rooted in the library's use of Indirect Function Calls (IFUNCs), which enabled runtime selection of function implementations.
+        \item \textbf{Crafted Attack}: Attacker Jia Tan created a malicious bash script using M4 macros that altered test files and modified the Makefile, resulting in the creation of a binary backdoor.
+        \item \textbf{Backdoor Mechanism}: The backdoor's IFUNC resolver modified the Global Offset Table (GOT), redirecting the \texttt{RSA\_public\_decrypt()} function to execute malicious code.
+        \item \textbf{Arbitrary Code Execution}: This manipulation allowed services like SSHD to utilize the library, leading to arbitrary code execution and highlighting significant risks associated with dynamic function resolution in shared libraries.
+    \end{itemize}
 }
 
-\we{Heartbleed}{
+\we{Heartbleed - CWE-125 (Out-of-Bounds Read)}{
     Heartbleed is a serious vulnerability in the OpenSSL cryptographic software library, discovered in 2014. 
     \begin{itemize}
         \item \textbf{Failure of Protocol Design}: The flaw allowed attackers to exploit the heartbeat extension of the TLS/DTLS protocols.
@@ -18,7 +19,7 @@
     \end{itemize}
 }
 
-\we{Shellshock}{
+\we{Shellshock - CWE 78 (OS Command Injection)}{
     Shellshock is a vulnerability in the Unix Bash shell that was discovered in 2014, allowing attackers to execute arbitrary commands via environment variables.
     \begin{itemize}
         \item \textbf{Bash Attack}: The vulnerability exploited the way Bash handles function definitions, enabling command injection.
@@ -28,7 +29,7 @@
     \end{itemize}
 }
 
-\we{Spectre and Meltdown}{
+\we{Spectre and Meltdown - CWE 200 (Information Exposure)}{
     Spectre and Meltdown are vulnerabilities discovered in modern CPUs, affecting nearly all processors manufactured since the late 1990s.
     \begin{itemize}
         \item \textbf{Rediscovered Vulnerabilities}: These vulnerabilities exploit speculative execution, a performance optimization technique used in CPUs.
